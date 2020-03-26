@@ -6,7 +6,7 @@
         <div class="split left">
   <div class="centered">
     
-    <h2>Place an Order</h2>
+   <router-link class="link" to="/Booking"> <h2>Place an Order</h2></router-link>
     
   </div>
   <div class="vl"></div>
@@ -44,6 +44,7 @@
 
 <script>
 import jwtDecode from 'jwt-decode'
+// import Booking from './Booking'
 export default {
   data () {
     const token = localStorage.usertoken
@@ -121,9 +122,9 @@ h1{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .vl {
-  border-left: 6px solid white;
+  border-left: 4px solid white;
   height: 500px;
-  margin-left:99%;
+  margin-left:99.9%;
   margin-top:15%;
   
 }

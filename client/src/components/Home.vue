@@ -14,13 +14,11 @@
       <div class="login d-flex align-items-center py-5">
         <div class="container">
           <div class="row">
-            
-              <Register/>
+            <Register/>
+         
+              
 
-              <li v-if="auth==''" class="nav-item">
-                    <router-link class="nav-link" to="/login">Login</router-link>
-                </li>
-
+      
 
               
             
@@ -61,6 +59,7 @@
     width:150px;
     border: 5px 5px;
     margin-top:6%;
+    font-weight:400;
 }
 .learnmore:hover{
     background-color: wheat;
@@ -91,10 +90,19 @@
 </style>
 <script>
 import Register from './Register'
+
 export default {
     name: 'App',
   components:{
     'Register':Register
   }
+ 
 }
 </script>
+
+<style scoped>
+.container{
+  margin-lefT:-5%;
+
+}
+</style>

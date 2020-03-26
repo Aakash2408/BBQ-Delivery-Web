@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-6 mt-5 mx-auto">
         <form v-on:submit.prevent="register">
-          <h3 >Sign Up to experience the convenience of grilling anywhere</h3><br></br>
+          <h3 >Experience the convenience of grilling anywhere</h3><br></br>
           <div class="form-item box-item">
             <label for="first_name">First Name</label>
             <input type="text" v-model="first_name" class="form-control" name="first_name" placeholder="Enter First Name">
@@ -20,7 +20,9 @@
             <label for="password">Password</label>
             <input type="password" v-model="password" class="form-control" name="password" placeholder="Enter Password">
           </div><br></br>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+          <div class="olduser"><router-link  to="/login">I have an account</router-link></div>
+                
         </form>
       </div>
     </div>
@@ -56,6 +58,10 @@ export default {
 }
 </script>
 <style scoped>
+h3{
+  font-size:20px;
+  text-align: left;
+}
 .form-item input[type="text"],
 .form-item input[type="number"],
 .form-item input[type="email"],.form-item input[type="password"] {
@@ -72,5 +78,12 @@ export default {
      -moz-appearance: none;
           appearance: none;
   outline: none;
+  width:140%;
+}
+.btn-block{
+margin-left:20%;}
+.olduser{
+  text-align: center;
+  margin-left:40%;
 }
 </style>
