@@ -14,14 +14,30 @@
       <div class="login d-flex align-items-center py-5">
         <div class="container">
           <div class="row">
+<<<<<<< HEAD
             <Register/>
          
               
+=======
+              <ul class="nav nav-pills mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link" :class="{ active: currentComponent == 'Register' }" @click="currentComponent = 'Register'">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" :class="{ active: currentComponent == 'Login' }" @click="currentComponent = 'Login'">Login</a>
+                </li>
+              </ul>
+            
+              <component :is="currentComponent" @registered="currentComponent = 'Login'"></component>
+              <!-- <Register/> -->
+
+              <li v-if="auth==''" class="nav-item">
+                  <router-link class="nav-link" to="/login">Login</router-link>
+              </li>
+>>>>>>> 07779f20a87fc62c6648e2f47b9b16cc8d8e498b
 
       
 
-              
-            
           </div>
         </div>
       </div>
@@ -86,15 +102,27 @@
     width:130px;
     top:2%;
 }
-
+.nav-item {
+  cursor: pointer;
+}
 </style>
 <script>
 import Register from './Register'
+<<<<<<< HEAD
+=======
+import Login from './Login'
+>>>>>>> 07779f20a87fc62c6648e2f47b9b16cc8d8e498b
 
 export default {
-    name: 'App',
+  name: 'App',
   components:{
-    'Register':Register
+    'Register': Register,
+    'Login': Login,
+  },
+  data() {
+    return {
+      currentComponent: 'Register'
+    }
   }
  
 }

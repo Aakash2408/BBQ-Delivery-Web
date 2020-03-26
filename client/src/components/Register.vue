@@ -49,7 +49,8 @@ export default {
         email: this.email,
         password: this.password
       }).then(res => {
-        router.push({ name: 'Login' })
+        // router.push({ name: 'Login' })
+        this.$emit('registered');
       }).catch(err => {
         window.alert(err.response.data.err)
       })
