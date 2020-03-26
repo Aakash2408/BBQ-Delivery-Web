@@ -14,11 +14,6 @@
       <div class="login d-flex align-items-center py-5">
         <div class="container">
           <div class="row">
-<<<<<<< HEAD
-            <Register/>
-         
-              
-=======
               <ul class="nav nav-pills mx-auto">
                 <li class="nav-item">
                   <a class="nav-link" :class="{ active: currentComponent == 'Register' }" @click="currentComponent = 'Register'">Register</a>
@@ -34,7 +29,6 @@
               <li v-if="auth==''" class="nav-item">
                   <router-link class="nav-link" to="/login">Login</router-link>
               </li>
->>>>>>> 07779f20a87fc62c6648e2f47b9b16cc8d8e498b
 
       
 
