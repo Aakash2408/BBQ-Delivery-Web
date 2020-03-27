@@ -5,7 +5,7 @@
              <h1 class="login-h1">Welcome Back!</h1><br></br>
             <div class="col-md-6 mt-5 mx-auto">
                 <form v-on:submit.prevent="login">
-                    <h3 class="login-h3">Please sign in</h3><br></br>
+                    <br></br>
                     <div class="form-item box-item">
                         <label for="email">Email Address</label>
                         <input type="email" v-model="email" class="form-control" name="email" placeholder="Enter Email">
@@ -65,7 +65,7 @@ export default {
   color:black;
   font-size: 24px;
   font-weight:300;
-  width: 100%;
+  width: 140%;
   background-color: transparent;
   border: none;
   border-bottom: 2px solid #54b7e663;
@@ -77,7 +77,7 @@ export default {
 }
 .login-h1{
     text-align: center;
-   margin-left:40%;
+   margin-left:45%;
    margin-top:5%;
    font-size:34px;
 }

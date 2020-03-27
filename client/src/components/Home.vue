@@ -4,11 +4,10 @@
         
   <div class="row no-gutter">
     <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image">
-        <img src="./images/logo.png" class="logo">
+         <h3 class="logo"> Uber<span class="Grill">Grill</span></h3>
         <div class="text-container">
-           
-            <div class="text">BBQ Delivery service at the  touch  of a button </div>
-        <button class="learnmore" >Learn More</button>
+           <div class="text">BBQ Delivery service at the  touch  of a button </div>
+           <button class="learnmore" >Learn More</button>
     </div></div>
     <div class="col-md-8 col-lg-6">
       <div class="login d-flex align-items-center py-5">
@@ -22,16 +21,11 @@
                   <a class="nav-link" :class="{ active: currentComponent == 'Login' }" @click="currentComponent = 'Login'">Login</a>
                 </li>
               </ul>
-            
-              <component :is="currentComponent" @registered="currentComponent = 'Login'"></component>
-              <!-- <Register/> -->
 
-              <li v-if="auth==''" class="nav-item">
-                  <router-link class="nav-link" to="/login">Login</router-link>
-              </li>
-
-      
-
+                <component :is="currentComponent" @registered="currentComponent = 'Login'"></component>
+          <li v-if="auth==''" class="nav-item">
+            <router-link class="nav-link" to="/login">Login</router-link>
+          </li>
           </div>
         </div>
       </div>
@@ -41,6 +35,7 @@
 
 </template>
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
 
 /* .container{
     width: 40%;
@@ -60,8 +55,15 @@
   float: left;
 }
 .logo{
-    background-image: url('/images/logo.png');
-    z-index: 999;
+  padding-top:13px;
+  padding-left:10px;
+  font-family: 'Bree Serif', serif;
+  color:white;
+}
+span{
+  color: rgba(72, 177, 12, 0.76);
+   padding-top:13px;
+  
 }
 .learnmore{
     padding-bottom: 15px;
@@ -102,10 +104,7 @@
 </style>
 <script>
 import Register from './Register'
-<<<<<<< HEAD
-=======
 import Login from './Login'
->>>>>>> 07779f20a87fc62c6648e2f47b9b16cc8d8e498b
 
 export default {
   name: 'App',

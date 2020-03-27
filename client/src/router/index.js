@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
 import Profile from '@/components/Profile'
+import Booking from '@/components/Booking'
 
 
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/profile',
       name: 'Profile',
       component: Profile    
+    },
+    {
+      path: '/booking',
+      name: 'Booking',
+      component: Booking    
     }
   ]
 })

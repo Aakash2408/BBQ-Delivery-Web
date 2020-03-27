@@ -21,8 +21,7 @@
             <input type="password" v-model="password" class="form-control" name="password" placeholder="Enter Password">
           </div><br></br>
           <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
-          <div class="olduser"><router-link  to="/login">I have an account</router-link></div>
-                
+         
         </form>
       </div>
     </div>
@@ -73,7 +72,7 @@ h3{
   width: 100%;
   background-color: transparent;
   border: none;
-  border-bottom: 2px solid #75759e;
+ border-bottom: 2px solid #54b7e663;
   padding: 8px 0;
   -webkit-appearance: none;
      -moz-appearance: none;
