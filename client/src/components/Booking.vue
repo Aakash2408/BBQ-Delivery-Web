@@ -19,9 +19,9 @@
 
     <div class="split right">
     
-      <div class="centered">
+   
       <router-view/>
-      </div>
+    
     </div>
 </div>
 
