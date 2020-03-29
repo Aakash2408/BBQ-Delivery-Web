@@ -1,5 +1,6 @@
 <template>
 <div id="app">
+  <quantity></quantity>
   <div class="allin">
   <div class="container">
     <div class="tab-container">
@@ -22,6 +23,12 @@
        <div class="item-container">
               <div><p>Hourely Rate: 5$</p>
               <p>Daily rate:70$</p></div>
+
+               <div class="quantity-toggle">
+      <button @click="decrement()">&mdash;</button>
+      <input type="text" :value="quantity" readonly>
+      <button @click="increment()">&#xff0b;</button>
+    </div>
               
               <img src="https://janeskitchenmiracles.com/wp-content/uploads/2017/04/1JPG200x200.jpg">
          </div>
@@ -56,6 +63,11 @@
           <div class="item-container">
               <div><p>Hourely Rate: 5$</p>
               <p>Daily rate:70$</p></div>
+               <div class="quantity-toggle">
+      <button @click="decrement()">&mdash;</button>
+      <input type="text" :value="quantity" readonly>
+      <button @click="increment()">&#xff0b;</button>
+    </div>
               <img src="https://janeskitchenmiracles.com/wp-content/uploads/2017/04/1JPG200x200.jpg">
          </div>
         </div><!-- End Col -->
@@ -90,6 +102,11 @@
          <div class="item-container">
               <div><p>Hourely Rate: 5$</p>
               <p>Daily rate:70$</p></div>
+               <div class="quantity-toggle">
+      <button @click="decrement()">&mdash;</button>
+      <input type="text" :value="quantity" readonly>
+      <button @click="increment()">&#xff0b;</button>
+    </div>
               <img src="https://janeskitchenmiracles.com/wp-content/uploads/2017/04/1JPG200x200.jpg">
          </div>
        </div><!-- End Col -->
@@ -125,6 +142,11 @@
   <div class="item-container">
               <div><p>Hourely Rate: 5$</p>
               <p>Daily rate:70$</p></div>
+               <div class="quantity-toggle">
+      <button @click="decrement()">&mdash;</button>
+      <input type="text" :value="quantity" readonly>
+      <button @click="increment()">&#xff0b;</button>
+    </div>
               <img src="https://janeskitchenmiracles.com/wp-content/uploads/2017/04/1JPG200x200.jpg">
          </div>
  
@@ -160,6 +182,11 @@
         <div class="item-container">
               <div><p>Hourely Rate: 5$</p>
               <p>Daily rate:70$</p></div>
+               <div class="quantity-toggle">
+      <button @click="decrement()">&mdash;</button>
+      <input type="text" :value="quantity" readonly>
+      <button @click="increment()">&#xff0b;</button>
+    </div>
               <img src="https://janeskitchenmiracles.com/wp-content/uploads/2017/04/1JPG200x200.jpg">
          </div>
         </div><!-- End Col -->
@@ -196,6 +223,12 @@
          <div class="item-container">
               <div><p>Hourely Rate: 5$</p>
               <p>Daily rate:70$</p></div>
+             
+               <div class="quantity-toggle">
+      <button @click="decrement()">&mdash;</button>
+      <input type="text" :value="quantity" readonly>
+      <button @click="increment()">&#xff0b;</button>
+    </div>
               <img src="https://janeskitchenmiracles.com/wp-content/uploads/2017/04/1JPG200x200.jpg">
          </div>
         </div><!-- End Col -->
@@ -229,6 +262,7 @@ export default {
         msg:"string"
     },
     data(){return {
+    quantity:1,
     title: "Hello",
       isShow: {
         'Grill 1': false,
@@ -237,7 +271,19 @@ export default {
         'Grill 4': false,
         'Grill 5': false,
         'Grill 6': false,
+      },
+       methods: {
+    increment () {
+      this.quantity++
+    },
+    decrement () {
+      if(this.quantity === 1) {
+        alert('Negative quantity not allowed')
+      } else {
+        this.quantity--
       }
+    }
+    }
     }
     }
     
@@ -245,6 +291,12 @@ export default {
 </script>
 
 <style>
+.quantity-toggle{
+  display: flex;
+  margin-top:45%;
+  width:90%;
+  margin-left:-30%;
+}
 .select{
   padding-top:2px;
 
