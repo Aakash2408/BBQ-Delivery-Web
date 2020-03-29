@@ -19,7 +19,6 @@
 
     <div class="split right">
     
-   
       <router-view/>
     
     </div>
@@ -93,8 +92,8 @@ padding-left:15px;
 /* Control the right side */
 .right {
     top:60px;
-    
-  right: 0;
+
+    right: 0;
    background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

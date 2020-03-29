@@ -1,15 +1,24 @@
 <template>
-    <div class="map">
-        <div class="container">
-            <h3>SELECT PICKUP TIME</h3>
-        </div>  
-    </div>
+<div>
+    <v-menu>
+        <v-text-field slot ="activator" label="Due-Date" prepend-icon="date_range"></v-text-field>
+        <v-textarea  v-model="due"></v-textarea> 
+    </v-menu>
+</div>
 </template>
 <script>
+ 
 export default {
-    name:"map",
+    name:"pickup",
     props:{
         msg:"string"
+    },
+    data(){
+        return{
+            title:'',
+            content:'',
+            due:null
+        }
     }
 };
 </script>
