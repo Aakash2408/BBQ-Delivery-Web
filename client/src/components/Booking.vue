@@ -4,18 +4,23 @@
 
 
     <div class="split left">
+      
        <div class="centered">
-         <div class="dot1"> <span class="dot"></span> Hey</div>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
+         
+          
+          <router-link to="/booking/bbq"><span class="dot">1</span> <section class="text"> Choose your BBQ</section></router-link>
+          <router-link to="/booking/pickup"><span class="dot">2</span><section class="text">Arrange Delivery and Pickup</section></router-link>
+          <router-link to="/booking/map"><span class="dot">3</span> <section class="text"> Set up Drop-off point</section></router-link>
+         
+        
+         </div>
         <div class="vl"></div>
     </div>
 
     <div class="split right">
+    
       <div class="centered">
-      
+      <router-view/>
       </div>
     </div>
 </div>
@@ -23,17 +28,29 @@
 </template>
 
 <script>
+import Pickup from './Pickup'
 import Mininav from './Mininav'
 export default {
     name: 'App',
   components:{
-    'Mininav':Mininav
+    'Mininav':Mininav,
+    'Pickup':Pickup
+
   }
 }
 </script>
 
 
 <style scoped>
+.text{
+  color:white;
+  cursor: pointer;
+  position: relative;
+  margin-top:-10.5%;
+padding-left: 60px;
+  display:flex;
+  font-size: 37px;
+}
 .split {
   height: 100vh;
   width: 50%;
@@ -44,22 +61,28 @@ export default {
   
 }
 .dot {
-  height: 55px;
-  width: 55px;
+  height: 45px;
+  width: 45px;
   background-color: #bbb;
   border-radius: 50%;
   display: flex;
-}
-.dot1{
-  display: flex;
-  font-size:1.17em;
+  font-size:1.80em;
   font-weight: 500;
-  padding-top:-40;
+  text-align: center;
+padding-left:15px;
+  color: black;
+ 
+  margin-top:20%;
 }
+
+
+
+
+
 /* Control the left side */
 .left {
     top:60px;
-  left: 0;
+    left: 0;
    background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -82,8 +105,8 @@ export default {
 /* If you want the content centered horizontally and vertically */
 .centered {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 33.5%;
+  left: 40%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -130,6 +153,14 @@ span{
   height:60px;
   background:transparent;
 }
+/* p{
+  cursor: pointer;
+  padding-top: 172px;
+  padding-left: 20px;
+  color: white;
+  font-size:1.7em;
+  font-weight: bolder;
+} */
 
 
 </style>

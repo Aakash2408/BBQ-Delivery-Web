@@ -78,7 +78,7 @@ h3{
      -moz-appearance: none;
           appearance: none;
   outline: none;
-  width:140%;
+  width:120%;
 }
 .btn-block{
 margin-left:20%;}

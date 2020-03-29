@@ -2,7 +2,7 @@
 <div>
 <nav class="main-nav">   
                 <h3 class="logo"> Uber<span class="Grill">Grill</span></h3>    
-                <h3 class="text-center">Welcome {{first_name}}</h3>
+                <h3 class="text-center">Hi {{first_name}}</h3>
                 <a class="nav-link" href="" v-on:click="logout"><h3>Logout</h3></a>
     </nav>
 </div>
@@ -14,9 +14,11 @@
   padding-left:10px;
   font-family: 'Bree Serif', serif;
   color:White;
+  font-weight: 700;
 }
 span{
-  color: rgba(72, 177, 12, 0.76);;
+  color: rgba(72, 177, 12, 0.76);
+  padding-top:13px;
 }
 .vl {
   border-left: 4px solid white;
@@ -27,22 +29,31 @@ span{
 }
 .text-center{
     position: fixed;
-    left: 43%;
+    left: 47%;
     margin-top:-41px;
     color: rgba(72, 177, 12, 0.76);
     font-family: 'Bree Serif', serif;
+    font-weight: 500;
 }
 
 .nav-link{
-    left:94%;
+    right:4%;
     position: fixed;
     margin-top:-47px;
     font-size:1.47em;
     font-weight: bold;
     color: white;
-    
+     font-weight: 500;
     font-family: 'Bree Serif', serif;
         
+}
+@media (max-width:864px){
+  .text-center{
+    left:34%;
+    display: block;
+    
+
+    }
 }
 
 .logoutbtn:hover{

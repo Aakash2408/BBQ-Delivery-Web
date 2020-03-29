@@ -5,6 +5,11 @@ import Login from '@/components/Login'
 import Register from '@/components/Register'
 import Profile from '@/components/Profile'
 import Booking from '@/components/Booking'
+import Pickup from '@/components/Pickup'
+import Bbq from '@/components/Bbq'
+import map from '@/components/map'
+import Orders from '@/components/Orders'
+
 
 
 
@@ -33,9 +38,32 @@ export default new Router({
       component: Profile    
     },
     {
+      path: '/orders',
+      name: 'Orders',
+      component: Orders    
+    },
+    {
       path: '/booking',
       name: 'Booking',
-      component: Booking    
-    }
+      component: Booking ,
+      children:[
+                  {
+                         path: 'pickup',
+                         name: 'Pickup',
+                         component: Pickup
+                  },
+                  {
+                         path:'bbq',
+                         name:'Bbq',
+                         component:Bbq
+                  },
+                  {
+                        path:'map',
+                        name:'map',
+                        component:map
+                  }
+                ]
+    } 
+    
   ]
 })

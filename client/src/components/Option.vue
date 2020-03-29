@@ -12,7 +12,7 @@
 <div class="split right">
   <div class="centered">
     
-    <h2>Order history</h2>
+    <router-link to="/Orders"> <h2>Order history</h2></router-link>
     
   </div>
 </div>
