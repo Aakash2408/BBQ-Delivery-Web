@@ -3,7 +3,7 @@
       <Mininav />
     <div class="content">
 <h2>You have no not placed any Orders till now </h2>
- <router-link  to="/Booking"> <h1>Make your first order here</h1> </router-link>
+ <router-link  to="/Booking"> <h1 style="font-size:60px;">Make your first order here</h1> </router-link>
    </div>
   </div>
 </template>

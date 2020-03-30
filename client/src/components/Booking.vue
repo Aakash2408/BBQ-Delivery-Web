@@ -9,11 +9,14 @@
          
           
           <router-link to="/booking/bbq"><span class="dot">1</span> <section class="text"> Choose your BBQ</section></router-link>
-          <router-link to="/booking/pickup"><span class="dot">2</span><section class="text">Arrange Delivery and Pickup</section></router-link>
-          <router-link to="/booking/map"><span class="dot">3</span> <section class="text"> Set up Drop-off point</section></router-link>
+            <router-link to="/booking/addons"><span class="dot">2</span><section class="text">Add ons</section></router-link>
          
+          <router-link to="/booking/pickup"><span class="dot">3</span><section class="text">Arrange Delivery and Pickup</section></router-link>
+          <router-link to="/booking/map"><span class="dot">4</span> <section class="text"> Set up Drop-off point</section></router-link>
+          <button style="height:40px;"> <router-link to="/profile"> Home</router-link> </button>
         
          </div>
+        
         <div class="vl"></div>
     </div>
 
@@ -41,6 +44,11 @@ export default {
 
 
 <style scoped>
+button:hover{
+  transition: 0.5s ease-out;
+  background-color:rgba(72, 177, 12, 0.76);
+ color:white;
+}
 .text{
   color:white;
   cursor: pointer;
@@ -74,9 +82,9 @@ padding-left:15px;
   margin-top:20%;
 }
 
-
-
-
+button{
+  margin-top: 50px;
+}
 
 /* Control the left side */
 .left {
@@ -104,7 +112,7 @@ padding-left:15px;
 /* If you want the content centered horizontally and vertically */
 .centered {
   position: absolute;
-  top: 33.5%;
+  top: 40.5%;
   left: 40%;
   transform: translate(-50%, -50%);
   text-align: center;
