@@ -7,11 +7,11 @@
       
        <div class="centered">
          
-          
-          <router-link to="/booking/bbq"><span class="dot">1</span> <section class="text"> Choose your BBQ</section></router-link>
-            <router-link to="/booking/addons"><span class="dot">2</span><section class="text">Add ons</section></router-link>
+           <router-link to="/booking/pickup"><span class="dot">1</span><section class="text">Arrange Delivery and Pickup</section></router-link>
+          <router-link to="/booking/bbq"><span class="dot">2</span> <section class="text"> Choose your BBQ</section></router-link>
+            <router-link to="/booking/addons"><span class="dot">3</span><section class="text">Add ons</section></router-link>
          
-          <router-link to="/booking/pickup"><span class="dot">3</span><section class="text">Arrange Delivery and Pickup</section></router-link>
+    
           <router-link to="/booking/map"><span class="dot">4</span> <section class="text"> Set up Drop-off point</section></router-link>
           <button style="height:40px;"> <router-link to="/profile"> Home</router-link> </button>
         
