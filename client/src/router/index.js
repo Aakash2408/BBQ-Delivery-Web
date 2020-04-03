@@ -10,6 +10,7 @@ import Bbq from '@/components/Bbq'
 import map from '@/components/map'
 import Addons from '@/components/addons'
 import Orders from '@/components/Orders'
+import Orders from '@/components/Product'
 
 
 
@@ -44,6 +45,11 @@ export default new Router({
       name: 'Orders',
       component: Orders    
     },
+    {
+      path: '/product',
+      name: 'Product',
+      component: Product
+    }
     {
       path: '/booking',
       name: 'Booking',
