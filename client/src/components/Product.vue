@@ -5,7 +5,7 @@
   <div id="app">
   <div class="container">
     <nav class="well well-sm">
-      <a  @click.prevent="isShowingCart = false" class="BBQ"><strong><h1 style="margin-top:4%; text-align:center;">BBQ Store</h1></strong></a>
+      <a  @click.prevent="isShowingCart = false" class="BBQ"><strong><h1 style="margin-top:4%;  text-align:center;">BBQ Store</h1></strong></a>
      
         <div class="text-right pull-right" style="margin-top:5%;">
     <span class="stats">
@@ -163,55 +163,87 @@ export default {
             inStock: 5
         },
          {
-            id: 3,
-            name: "Grill 3",
+            id: 4,
+            name: "Grill 4",
             description:
             "",
             price: 149,
             inStock: 5
         },
          {
-            id: 3,
-            name: "Grill 3",
+            id: 5,
+            name: "Grill 5",
             description:
             "",
             price: 149,
             inStock: 5
         },
          {
-            id: 3,
-            name: "Grill 3",
+            id: 6,
+            name: "Grill 6",
             description:
             "",
             price: 149,
             inStock: 5
         },
          {
-            id: 3,
-            name: "Grill 3",
+            id: 7,
+            name: "Grill 7",
             description:
             "",
             price: 149,
             inStock: 5
         },
          {
-            id: 3,
-            name: "Grill 3",
+            id: 8,
+            name: "Grill 8",
             description:
             "",
             price: 149,
             inStock: 5
         },
          {
-            id: 3,
-            name: "Grill 3",
+            id: 9,
+            name: "Grill 9",
             description:
             "",
             price: 149,
             inStock: 5
         },
          {
-            id: 3,
+            id: 10,
+            name: "Artificial truf",
+            description:
+            "",
+            price: 19,
+            inStock: 7
+        },
+         {
+            id: 11,
+            name: "BBQ Dragon",
+            description:
+            "",
+            price: 35,
+            inStock: 5
+        },
+         {
+            id: 12,
+            name: "Portable Chairs",
+            description:
+            "",
+            price: 15,
+            inStock: 8
+        },
+         {
+            id: 13,
+            name: "Portable Wood Pellet Pizza Oven",
+            description:
+            "",
+            price: 149,
+            inStock: 5
+        },
+         {
+            id: 14,
             name: "Add On 1",
             description:
             "",
@@ -219,7 +251,7 @@ export default {
             inStock: 5
         },
          {
-            id: 3,
+            id: 15,
             name: "Add On 1",
             description:
             "",
@@ -227,39 +259,7 @@ export default {
             inStock: 5
         },
          {
-            id: 3,
-            name: "Add On 1",
-            description:
-            "",
-            price: 149,
-            inStock: 5
-        },
-         {
-            id: 3,
-            name: "Add On 1",
-            description:
-            "",
-            price: 149,
-            inStock: 5
-        },
-         {
-            id: 3,
-            name: "Add On 1",
-            description:
-            "",
-            price: 149,
-            inStock: 5
-        },
-         {
-            id: 3,
-            name: "Add On 1",
-            description:
-            "",
-            price: 149,
-            inStock: 5
-        },
-         {
-            id: 3,
+            id: 16,
             name: "Add On 1",
             description:
             "",
@@ -268,7 +268,7 @@ export default {
         },
 
         {
-            id: 3,
+            id: 17,
             name: "Add On 1",
             description:
             "",
@@ -276,7 +276,7 @@ export default {
             inStock: 5
         },
          {
-            id: 3,
+            id: 18,
             name: "Add On 1",
             description:
             "",

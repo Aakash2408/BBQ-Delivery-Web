@@ -7,8 +7,8 @@ import Profile from '@/components/Profile'
 import Booking from '@/components/Booking'
 import Pickup from '@/components/Pickup'
 import Bbq from '@/components/Bbq'
-import map from '@/components/map'
-import Addons from '@/components/addons'
+import Address from '@/components/Address'
+
 import Orders from '@/components/Orders'
 import Product from '@/components/Product'
 
@@ -66,15 +66,11 @@ export default new Router({
                          component:Bbq
                   },
                   {
-                        path:'map',
-                        name:'map',
-                        component:map
+                        path:'address',
+                        name:'Address',
+                        component:Address
                   },
-                  {
-                       path:'addons',
-                       name:'Addons',
-                       component:Addons
-                  }
+                 
                 ]
     } 
     
