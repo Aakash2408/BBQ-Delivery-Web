@@ -7,7 +7,7 @@
          <h3 class="logo"> Uber<span class="Grill">Grill</span></h3>
         <div class="text-container">
            <div class="text">BBQ Delivery service at the  touch  of a button </div>
-           <button class="learnmore" >Learn More</button>
+           <!-- <button class="learnmore" >Learn More</button> -->
     </div></div>
     <div class="col-md-8 col-lg-6">
       <div class="login d-flex align-items-center py-5">

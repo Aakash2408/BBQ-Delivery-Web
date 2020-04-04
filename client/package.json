@@ -14,12 +14,15 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@syncfusion/ej2-vue-calendars": "^18.1.42",
+    "@vue/cli": "^4.2.3",
     "axios": "^0.18.0",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "jwt-decode": "^2.2.0",
     "popper": "^1.0.1",
     "vue": "^2.5.2",
+    "vue-ctk-date-time-picker": "^2.4.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
