@@ -14,7 +14,7 @@
       <template v-else>items</template> 
       in cart, totalling {{ cartTotal | currency }}
       <button class="btn btn-primary" @click="isShowingCart = true">View Cart</button>
-       <button class="btn btn-primary" style="color:white;  background:white; "><router-link to="/booking">Booking page</router-link></button>
+       <!-- <button class="btn btn-primary" style="color:white;  background:white; "><router-link to="/booking">Booking page</router-link></button> -->
     </span>
     
   </div>

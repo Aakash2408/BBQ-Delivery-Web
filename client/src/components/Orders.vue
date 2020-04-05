@@ -1,9 +1,15 @@
 <template>
   <div class="Orders">
       <Mininav />
+       <button class="btn btn-primary" style="color:white;  background:white; text-align:center;"><router-link to="/booking">Booking page</router-link></button>
     <div class="content">
+
 <h2>You have no not placed any Orders till now </h2>
  <router-link  to="/Booking"> <h1 style="font-size:60px;">Make your first order here</h1> </router-link>
+<div class="information">
+  <h1> {{state}}, {{city}},{{street_1}}</h1>
+</div>
+
    </div>
   </div>
 </template>
@@ -14,9 +20,23 @@ export default {
 name: 'App',
   components:{
     'Mininav':Mininav
-  }
+  },
  
+
+
+     data () {
+    const token = localStorage.usertoken
+    const decoded = jwtDecode(token)
+    return {
+      state: decoded.state,
+      city: decoded.city,
+      street_1: decoded.street_1,
+      street_2:decoded.street_2,
+      tel:decoded.tel
+      }
+  }
 }
+
 </script>
 
 <style>
