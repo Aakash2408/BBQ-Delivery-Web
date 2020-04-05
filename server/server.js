@@ -16,8 +16,10 @@ mongoose.connect(mongoURI, {useNewUrlParser :true,useUnifiedTopology:true})
   .catch(err => console.log(err))
 
   var Users = require("./routes/Users")
+  var Address= require("./routes/Address")
 
   app.use("/users", Users)
+  app.use("/address",Address)
 
   app.listen(port,function(){
       console.log("Server is running on port : " + port)

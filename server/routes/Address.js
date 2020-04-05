@@ -1,14 +1,14 @@
 const express = require("express")
-const users = express.Router()
+const address = express.Router()
 const cors = require("cors")
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcrypt")
 const Address = require("../models/Address")
-users.use(cors())
+address.use(cors())
 
 
 
-users.post("/Address", (req, res) => {
+address.post("/Address", (req, res) => {
     const today = new Date()
     const addressInfo = {
         state: req.body.state,
@@ -20,18 +20,17 @@ users.post("/Address", (req, res) => {
      .then(userdata => {
            Address.create(addressInfo)
            .then(userdata => {
-               res.json({
-                   ({ status: user.city + ' addressed' })
-               })
+               res.json({ status: addressInfo.city + ' addressed' })
+                 })
                .catch(err => {
                             res.send('error: ' + err)
                         })
-           })
+        })
             .catch(err => {
             res.status(400).send('error: ' + err)
         })
 
-}
-}
 
-module.exports = users
+})
+
+module.exports = address

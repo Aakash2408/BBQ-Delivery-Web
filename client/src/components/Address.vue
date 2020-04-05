@@ -47,7 +47,7 @@ export default {
   },
    methods: {
     address () {
-      axios.post('users/Address', {
+      axios.post('address/Address', {
         state:this.state,
         city: this.city,
         street_1: this.street_1,
