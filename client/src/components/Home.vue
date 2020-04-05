@@ -8,35 +8,38 @@
         <div class="text-container">
            <div class="text">BBQ Delivery service at the  touch  of a button </div>
            <button  @click="modalAction()" class="learnmore" >Learn More</button>
-           <div  v-if="modal" class="bg-black absolute pin-t pin-l  h-screen w-full flex items center">
-        <div class ="popup">
-           <div class="popup-container">
-           <button  @click="modalAction()"  style="position:absolute; top:5%; left:50%;  background-color:transparent; color:white;text-align:center;" >X</button>
-        <h1 style="text-align:center; font-size:4.5em; margin-top:10%; color:White">You Ask , We Deliver!</h1>
-        <h3 style="text-align:center; color: rgba(72, 177, 12, 0.76);">Throwing the best BBQ on the block just become easier!</h3>
-        <div class="main-container">
-          <div class="container1">
-            <img src="https://images.pexels.com/photos/935743/pexels-photo-935743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style="border-radius:50%; height:140px; width:140px; margin-left:30%; margin-top:4%;">
-            <h4 style="text-align:center; margin-top:5%; font-size:1.9em;">Convenience</h4>
-            <p style=" margin-left:10%; max-width:80%; text-align:center;  margin-rights:10%; font-size:1.1em;">Get a BBQ grill and accessories delievered wherever you need at the tap of a button.Whether its a family gathering or a sporting event,we've got you covered!</p>
-          </div>
-          <div class="container2">
-            <img src="https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"  style="border-radius:50%; height:140px; width:140px; margin-left:30%; margin-top:4%;">
-            <h4 style="text-align:center; margin-top:5%; font-size:1.9em;">Affordable Luxury</h4>
-            <p style=" margin-left:8%; max-width:80%;  text-align:center; margin-rights:15%; font-size:1.1em;">We stock only the best quality grills on the market and offer them for hourly or daily rental at a juicy price</p>
-          </div>
-          <div class="container3">
-            <img src="https://images.pexels.com/photos/461049/pexels-photo-461049.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style="border-radius:50%; height:140px; width:140px; margin-left:30%; margin-top:4%;">
-            <h4 style="text-align:center; margin-top:5%; font-size:1.9em;"> Quality</h4>
-            <p style=" margin-left:10%; text-align:center; max-width:80%; margin-rights:10%; font-size:1.1em;">All grills come pre-inspected with a full tank of propane.We take care of the maintenance so you can focus on the important stuff - like becoming the next grill boss</p>
-          </div>
-        </div>
-           </div>
-        <!-- <button class="bg-teal text-white font-bond px-4 py-2 rounded-full">Close</button> -->
-     
-     </div> 
-    </div> 
+           
+
     </div></div>
+    <div  v-if="modal" class="bg-black absolute pin-t pin-l  h-screen w-full flex items center">
+      <div class ="popup">
+        <div class="popup-container">
+        <button  @click="modalAction()"  style="position:absolute; top:5%; left:50%; transform:translateX(-50%); background-color:transparent; color:white;text-align:center;" >X</button>
+     <h1 style="text-align:center; font-size:4.5em; margin-top:10%; color:White">You Ask , We Deliver!</h1>
+     <h3 style="text-align:center; color: rgba(72, 177, 12, 0.76);">Throwing the best BBQ on the block just become easier!</h3>
+     <div class="main-container">
+       <div class="container1">
+         <img src="https://images.pexels.com/photos/935743/pexels-photo-935743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style="border-radius:50%; height:140px; width:140px; margin-left:30%; margin-top:4%;">
+         <h4 style="text-align:center; margin-top:5%; font-size:1.9em;">Convenience</h4>
+         <p style=" margin-left:10%; max-width:80%; text-align:center;  margin-rights:10%; font-size:1.1em;">Get a BBQ grill and accessories delievered wherever you need at the tap of a button.Whether its a family gathering or a sporting event,we've got you covered!</p>
+       </div>
+       <div class="container2">
+         <img src="https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"  style="border-radius:50%; height:140px; width:140px; margin-left:30%; margin-top:4%;">
+         <h4 style="text-align:center; margin-top:5%; font-size:1.9em;">Affordable Luxury</h4>
+         <p style=" margin-left:8%; max-width:80%;  text-align:center; margin-rights:15%; font-size:1.1em;">We stock only the best quality grills on the market and offer them for hourly or daily rental at a juicy price</p>
+       </div>
+       <div class="container3">
+         <img src="https://images.pexels.com/photos/461049/pexels-photo-461049.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style="border-radius:50%; height:140px; width:140px; margin-left:30%; margin-top:4%;">
+         <h4 style="text-align:center; margin-top:5%; font-size:1.9em;"> Quality</h4>
+         <p style=" margin-left:10%; text-align:center; max-width:80%; margin-rights:10%; font-size:1.1em;">All grills come pre-inspected with a full tank of propane.We take care of the maintenance so you can focus on the important stuff - like becoming the next grill boss</p>
+       </div>
+     </div>
+        </div>
+     <!-- <button class="bg-teal text-white font-bond px-4 py-2 rounded-full">Close</button> -->
+  
+  </div> 
+    </div> 
+    
     
     
     
@@ -73,14 +76,17 @@
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
 .popup{
   position:fixed;
-  height:100vh;
+  min-height:100vh;
   top:0%;
   left:0%;
   /* transform:translate(-50%,-50%); */
   z-index:99;
-  width:198.9vh;
-  max-width:200vh;
+  /* width:198.9vh; */
+  /* max-width:200vh; */
   background-color:black;
+  padding: 0 50px;
+  width: 100vw;
+
 }
 @media only screen and (max-width: 1674px){
 
@@ -88,50 +94,39 @@
     /* margin-left:5% !important; */
    text-align: center !important;
     font-size:60px !important;
-    margin-right:15% !important;
+    /* margin-right:15% !important; */
   }
   h3{
     text-align:center !important;
     font-size:30px !important;
-    margin-right:15% !important;
+    /* margin-right:15% !important; */
   }
-  .popup{
-    position:fixed;
-    height:100vh;
-   width:230vh;
-    background-color:black;
-    z-index:99;
-    top:0%;
-  left:0%;
-  }
+
  
 } 
 @media only screen and (max-width: 880px){
-  .main-container{
-    display: flex;
-    flex-direction: column;
-  }
+
   .container1{
   
-  height:40vh;
+  /* height:40vh; */
   border-radius:10px;
 
-  width:35vh;
+  /* width:35vh; */
   background: white;
-  margin-left:-4%;
+  /* margin-left:-4%; */
   } 
   .container2{
   
-  height:40vh;
+  /* height:40vh; */
   border-radius:10px;
 
-  width:35vh;
+  /* width:35vh; */
   background: white;
   
-  margin-top:5%;
+  /* margin-top:5%; */
   } 
   .popup{
-    height:100%;
+    /* height:100%; */
     background-color: black ;
     position: absolute;
   }
@@ -149,83 +144,86 @@
    
     text-align:center !important;
     font-size:60px !important;
-    margin-right:25% !important;
-     margin-top:5% !important;
+    /* margin-right:25% !important; */
+      margin-top:100px!important;
+     /* margin-top:5% !important; */
   }
   h3{
     text-align:center !important;
     font-size:30px !important;
-    margin-right:29% !important;
+    /* margin-right:29% !important; */
   }
   p{
     font-size:24px;
   }
-   .main-container{
-    display: flex;
-    margin-right:70% !important;
-  }
+
   .container1{
   
-  height:40vh;
+  /* height:40vh; */
   border-radius:10px;
 
-  width:35vh;
+  /* width:35vh; */
   background: white;
   
   } 
   .container2{
   
-  height:40vh;
+  /* height:40vh; */
   border-radius:10px;
 
-  width:35vh;
+  /* width:35vh; */
   background: white;
 
  
   } 
 
 }
-@media only screen and (min-width: 1917px){
+/* @media only screen and (min-width: 1917px){
 .popup{
  
    width:220vh;
-    max-width:220vh;
-}
-.main-container{
-  margin-left:16% !important;
-}
+  max-width:220vh; 
+} */
 
-}
+
 
 
 .main-container{
-  display: flex;
-  margin-left:23%;
-  margin-top:5%;
+  width: 100%;
+  display: grid;
+ 
+  margin: auto;
+  margin-top:50px;
+  max-width: 1000px;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  grid-gap: 50px;
+
+ 
 }
+
 .container1{
-  height:40vh;
+  /* height:40vh; */
   border-radius:10px;
 
-  width:35vh;
+  /* width:35vh; */
   background: white;
 }
 .container2{
-  height:40vh;
+  /* height:40vh; */
   border-radius:10px;
 
-  width:35vh;
+  /* width:35vh; */
   background: white;
-  margin-left:3%;
+  /* margin-left:3%; */
   }
   
 .container3{
-   height:40vh;
+   /* height:40vh; */
   border-radius:10px;
 
-  width:35vh;
+  /* width:35vh; */
   background: white;
-  margin-left:3%;
+  /* margin-left:3%; */
   }
 
 .bg-image {
@@ -284,6 +282,27 @@ span{
 }
 .nav-item {
   cursor: pointer;
+}
+
+@media only screen and (max-width:768px)
+{
+  h1
+  {
+    font-size:40px!important;
+  }
+
+  h3
+  {
+    font-size: 20px!important;
+  }
+  h4
+  {
+    font-size: 25px!important;
+  }
+  p 
+  {
+    font-size:16px!important;
+  }
 }
 </style>
 <script>
