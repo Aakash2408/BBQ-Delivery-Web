@@ -1,26 +1,23 @@
 const express = require("express")
-const address = express.Router()
+const pickup = express.Router()
 const cors = require("cors")
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcrypt")
-const Address = require("../models/Address")
-address.use(cors())
+const Pickup = require("../models/Pickup")
+pickup.use(cors())
 
 
 
-address.post("/address", (req, res) => {
+pickup.post("/pickup", (req, res) => {
     const today = new Date()
-    const addressInfo = {
-        state: req.body.state,
-        city: req.body.city,
-        street_1: req.body.street_1,
-        street_2: req.body.street_2,
-        tel: req.body.tel
+    const pickupInfo = {
+        pickup_date: req.body.pickup,
+        dropoff_date: req.body.dropoff
     }
     //  .then(userdata => {
-           Address.create(addressInfo)
-           .then(userdata => {
-               res.json({ status: addressInfo.city + ' addressed' })
+           Pickup.create(pickupInfo)
+           .then(pickupdata => {
+               res.json({ status: pickupInfo.dropoff + ' is the Dropoff date' })
                  })
                .catch(err => {
                             res.send('error: ' + err)
@@ -33,4 +30,4 @@ address.post("/address", (req, res) => {
 
 
 })
-module.exports = address
+module.exports = pickup

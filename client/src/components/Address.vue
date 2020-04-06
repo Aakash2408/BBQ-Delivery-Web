@@ -1,3 +1,4 @@
+
 <template>
    <div class="container">
   <div class="row">
@@ -37,7 +38,6 @@
 <script>
 import axios from 'axios'
 import router from '../router'
-
 export default {
   data () {
     return {
@@ -65,8 +65,6 @@ export default {
     }
   }
 }
-
-
 </script>
 
 <style>
