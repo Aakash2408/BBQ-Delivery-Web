@@ -7,6 +7,7 @@
 <h2>You have no not placed any Orders till now </h2>
  <router-link  to="/Booking"> <h1 style="font-size:60px;">Make your first order here</h1> </router-link>
 <div class="information">
+  
   <h1> {{state}}, {{city}},{{street_1}}</h1>
 </div>
 
@@ -16,6 +17,7 @@
 
 <script>
 import Mininav from "./Mininav"
+import jwtDecode from 'jwt-decode'
 export default {
 name: 'App',
   components:{
@@ -55,5 +57,9 @@ h1{
     color: rgba(72, 177, 12, 0.76);
     text-align: center;
 
+}
+.information{
+  height:10vh;
+  background-color:aliceblue;
 }
 </style>

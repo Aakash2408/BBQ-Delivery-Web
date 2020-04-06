@@ -24,4 +24,4 @@ const AddressSchema = new Schema({
     }
     })
 
-module.exports = Address = mongoose.model('users', AddressSchema)
+module.exports = Address = mongoose.model('address', AddressSchema)

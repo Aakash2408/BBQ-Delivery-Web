@@ -18,13 +18,14 @@ address.post("/Address", (req, res) => {
         tel: req.body.tel
     }
      .then(userdata => {
-           Address.create(addressInfo)
-           .then(userdata => {
-               res.json({ status: addressInfo.city + ' addressed' })
-                 })
-               .catch(err => {
-                            res.send('error: ' + err)
-                        })
+        //    Address.create(addressInfo)
+        //    .then(userdata => {
+        //        res.json({ status: addressInfo.city + ' addressed' })
+        //          })
+        //        .catch(err => {
+        //                     res.send('error: ' + err)
+        //                 })
+        console.log("Address is not available")
         })
             .catch(err => {
             res.status(400).send('error: ' + err)

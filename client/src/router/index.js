@@ -9,6 +9,7 @@ import Pickup from '@/components/Pickup'
 import Bbq from '@/components/Bbq'
 import Address from '@/components/Address'
 
+
 import Orders from '@/components/Orders'
 import Product from '@/components/Product'
 
@@ -45,6 +46,7 @@ export default new Router({
       name: 'Orders',
       component: Orders    
     },
+  
     {
       path: '/product',
       name: 'Product',
