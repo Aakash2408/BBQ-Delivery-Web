@@ -1,4 +1,5 @@
 <template>
+
     <div id="app">
   <div class='col-md-6'>
                <div class="form-group">
@@ -40,12 +41,12 @@
 }
 </style>
 <script>
- import $ from 'jquery'
- import bootstrap from 'bootstrap';
-  import datePicker from 'vue-bootstrap-datetimepicker';
-  import 'bootstrap/dist/css/bootstrap.css';
-  import 'pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css';
-  import moment from 'moment'
+//  import $ from 'jquery'
+//  import bootstrap from 'bootstrap';
+//   import datePicker from 'vue-bootstrap-datetimepicker';
+//   import 'bootstrap/dist/css/bootstrap.css';
+//   import 'pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css';
+//   import moment from 'moment'
  
 export default {
 name:"Pickup",

@@ -8,7 +8,7 @@
  <router-link  to="/Booking"> <h1 style="font-size:60px;">Make your first order here</h1> </router-link>
 <div class="information">
   
-  <h1> {{state}}, {{city}},{{street_1}}</h1>
+  <h1> {{state}}, {{city}}</h1>
 </div>
 
    </div>
@@ -60,6 +60,6 @@ h1{
 }
 .information{
   height:10vh;
-  background-color:aliceblue;
+  <!-- background-color:aliceblue; -->
 }
 </style>

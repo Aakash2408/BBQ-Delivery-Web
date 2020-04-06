@@ -26,7 +26,7 @@
             <label for="tel">Contact Number </label>
             <input type="tel" v-model="telephone" class="form-control" name="tel" placeholder="Enter your Contact Number">
           </div><br></br>
-          <button class="btn btn-lg btn-primary btn-block" type="submit" style="color:white"><router-link to="/orders">Book Now</router-link></button>
+          <button class="btn btn-lg btn-primary btn-block"  type="submit" style="color:white"><router-link to ="/orders">Book Now</router-link></button>
          
         </form>
       </div>
@@ -35,7 +35,8 @@
 </template>
 
 <script>
-
+import axios from 'axios'
+import router from '../router'
 
 export default {
   data () {
@@ -49,7 +50,7 @@ export default {
   },
    methods: {
     address () {
-      axios.post('address/Address', {
+      axios.post('http://localhost:7000/address/address', {
         state:this.state,
         city: this.city,
         street_1: this.street_1,
