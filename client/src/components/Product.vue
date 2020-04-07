@@ -104,7 +104,7 @@
         
         <tr>
           <td colspan="2"></td>
-          <td><button class="btn btn-success" @click="checkout">Checkout</button></td>
+          <td><router-link to="/booking/address"><button class="btn btn-success" @click="checkout">Checkout</button></router-link></td>
         </tr>
       </tbody>
     </table>

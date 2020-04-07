@@ -1,129 +1,126 @@
 <template>
 
-    <div id="app">
-        <form v-on:submit.prevent="pickup">
-    <h3>Enter Timings</h3>
-      <div class="box1">
-  <div class='col-md-6'>
-               <div class="form-group">
-                  <label class="control-label">Pickup Time</label>
-                  <div class='input-group date' id='datetimepicker1'>
-                     <input type='text' class="form-control" />
-                     <span class="input-group-addon">
-                     <span class="glyphicon glyphicon-calendar"></span>
-                     </span>
-                  </div>
-               </div>
-            </div>
-      </div>
-
-
-      
-      <div class="box2">
-   <div class='col-md-6'>
-               <div class="form-group">
-                  <label class="control-label">Dropoff Time</label>
-                  <div class='input-group date' id='datetimepicker1'>
-                     <input type='text' class="form-control" />
-                     <span class="input-group-addon">
-                     <span class="glyphicon glyphicon-calendar"></span>
-                     </span>
-                  </div>
-               </div>
-            </div>
-      </div>
-      </form>
+<div>
+  
+  <form v-on:submit.prevent="pickup">
+    <h1>Enter Timings</h1>
+<div class="main">
+<div class="container mt-5 mb-5" style="width:400px">
+  <h3>Pickup Date</h3>
+  <input type="text" id="picker1" v-model="pickup_date" class="form-control" placeholder="Choose Pickup Date">
+  <h3>Dropoff Date </h3>
+  <input type="text" id="picker2" v-model="dropoff_date" class="form-control"  placeholder="Enter First Name">
+ </div>
 </div>
+<router-link to="/product"><button class="next" type="submit">Next</button></router-link>
+  </form>
+</div>
+
 </template>
 <style scoped>
-.container {
-  margin-top: 40px;
-}
-
-.btn-primary {
-  width: 100%;
-}
-.control-label{
+.form{
   color:white;
+}
+h1{
+  color: white;
+  text-align:center;
+}
+h3{
+  color: white;
 }
 .box1{
   margin-top:10%;
   margin-left:30%;
     width:100%;
 }
+.main{
+  margin-top:25%;
+}
 .box2{
  
   margin-left:30%;
   width:100%;
 }
+.container {
+  margin-top: 40px;
+}
+.control-label{
+  color:white;
+}
 .next{
   padding:5px 15px 5px 15px;
-  margin-left:2%;
+  margin-left:47%;
+  text-align: center;
 }
-h3{
-  text-align:center;
-  color:white;
-  margin-top:15%;
-  margin-left:5%;
+.xdsoft_datetimepicker {
+    box-shadow: 0 5px 15px -5px rgba(0,0,0,0.506);
+    background: #fff;
+    border-bottom: 1px solid #bbb;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    color: #333;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding: 8px;
+    padding-left: 0;
+    padding-top: 2px;
+    position: absolute;
+    z-index: 9999;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: none;
 }
-
-.bootstrap-datetimepicker-widget table th.disabled,
-.bootstrap-datetimepicker-widget table th.disabled:hover {
-  background: none;
-  color: red;
-  cursor: not-allowed;
+.xdsoft_datetimepicker .xdsoft_month {
+    width: 100px;
+    text-align: right;
 }
-.bootstrap-datetimepicker-widget table td span.disabled,
-.bootstrap-datetimepicker-widget table td i.disabled,
-.bootstrap-datetimepicker-widget table td span.disabled:hover,
-.bootstrap-datetimepicker-widget table td i.disabled:hover {
-  background: none;
-  color: green;
-  cursor: not-allowed;
-}
-.bootstrap-datetimepicker-widget table th.prev::after {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-  content: "Previous Month";
-  color:green;
-}
-.bootstrap-datetimepicker-widget table td span,
-.bootstrap-datetimepicker-widget table td i {
-  display: inline-block;
-  width: 54px;
-  height: 54px;
-  line-height: 54px;
-  margin: 2px 1.5px;
-  cursor: pointer;
-  background-color:red ;
-  border-radius: 0.25rem;
-}
-.glyphicon {
+.xdsoft_datetimepicker .xdsoft_label {
+    display: inline;
     position: relative;
-    top: 2px;
-    display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-style: normal;
-    font-weight: 400;
-    height:50px;
-    line-height: 2;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: aliceblue;
-}
-.glyphicon-calendar:before {
-    content: "\e109";
-}
-.input-group.date .input-group-addon {
+    z-index: 9999;
+    margin: 0;
+    padding: 5px 3px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: bold;
+    background-color: #fff;
+    float: left;
+    width: 182px;
+    text-align: center;
     cursor: pointer;
 }
-
+.xdsoft_datetimepicker .xdsoft_prev, .xdsoft_datetimepicker .xdsoft_today_button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: 0 none;
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    opacity: .5;
+    -ms-filter: "alpha(opacity=50)";
+    outline: medium none;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    text-indent: 100%;
+    white-space: nowrap;
+    width: 20px;
+    min-width: 0;
+}
+.xdsoft_datetimepicker .xdsoft_next {
+    float: right;
+    background-position: 0 0;
+}
+.xdsoft_datetimepicker .xdsoft_prev {
+    float: left;
+    background-position: -20px 0;
+}
+button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled) {
+    cursor: pointer;
+}
+.xdsoft_datetimepicker .xdsoft_calendar td>div {
+    padding-right: 5px;
+}
 
 
 </style>
@@ -134,13 +131,50 @@ h3{
 //   import 'bootstrap/dist/css/bootstrap.css';
 //   import 'pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css';
 //   import moment from 'moment'
- 
+ import axios from 'axios'
+import router from '../router'
 export default {
-name:"Pickup",
+ data () {
+    return {
+      pickup_date:'',
+      dropoff_date: ''
+    }
+  },
+ methods: {
+    pickup () {
+      axios.post('http://localhost:7000/pickup/pickup', {
+        pickup_date:this.pickup_date,
+        dropoff_date: this.dropoff_date
+      }).then(res => {
+        // router.push({ name: 'orders' })
+        this.$emit('Pickuped');
+      }).catch(err => {
+        window.alert(err.response.data.err)
+      })
+    }
+  },
 mounted(){
-  $(function () {
-    $('#datetimepicker1').datetimepicker();
- });
+ $('#picker1').datetimepicker({
+   timepicker:true,
+   datepicker:true,
+   format:'Y-m-d H:i',
+   onShow:function(ct){
+     this.setOptions({
+       maxDate:$('#picker2').val() ? $('#picker2').val():false
+     })
+   }
+ })
+
+ $('#picker2').datetimepicker({
+   timepicker:true,
+   datepicker:true,
+   format:'Y-m-d H:i',
+   onShow:function(ct){
+     this.setOptions({
+       minDate:$('#picker1').val() ? $('#picker1').val():false
+     })
+   }
+ })
 }
   
 };
