@@ -12,7 +12,7 @@ import Address from '@/components/Address'
 
 import Orders from '@/components/Orders'
 import Product from '@/components/Product'
-
+import Confirm from '@/components/Confirm'
 
 
 
@@ -74,7 +74,12 @@ export default new Router({
                   },
                  
                 ]
-    } 
+    } ,
+    {
+      path:'/confirm',
+      name:'Confirm',
+      component:Confirm
+    }
     
   ]
 })

@@ -1,56 +1,32 @@
 <template>
-
-<div>
-  
-  <form v-on:submit.prevent="pickup">
-    <h1>Enter Timings</h1>
-<div class="main">
-<div class="container mt-5 mb-5" style="width:400px">
-  <h3>Pickup Date</h3>
-  <input type="text" id="picker1" v-model="pickup_date" class="form-control" placeholder="Choose Pickup Date">
-  <h3>Dropoff Date </h3>
-  <input type="text" id="picker2" v-model="dropoff_date" class="form-control"  placeholder="Enter First Name">
- </div>
-</div>
-<router-link to="/product"><button class="next" type="submit">Next</button></router-link>
-  </form>
-</div>
+ <div class="container">
+    <div class="row">
+      <div class="col-md-6 mt-5 mx-auto">
+        <form v-on:submit.prevent="pickup">
+        
+          <div class="form-item box-item">
+            <label for="pickUp_time">Pickup Date</label>
+            <input type="text" id="picker1"  v-model="pickUp_time" class="form-control" name="pickUp_time" placeholder="choose Pickup Date">
+          </div><br>
+          <div class="form-item box-item">
+            <label for="dropOff_time">DropOff Date</label>
+            <input type="text" id="picker2" v-model="dropOff_time" class="form-control" name="dropOff_time" placeholder="choose Dropoff date">
+          </div><br></br>
+         
+         <button class="btn btn-lg btn-primary btn-block" type="submit">Next</button>
+         
+        </form>
+      </div>
+    </div>
+  </div>
 
 </template>
 <style scoped>
-.form{
-  color:white;
-}
-h1{
-  color: white;
-  text-align:center;
-}
-h3{
-  color: white;
-}
-.box1{
-  margin-top:10%;
-  margin-left:30%;
-    width:100%;
-}
-.main{
+.row{
   margin-top:25%;
 }
-.box2{
- 
-  margin-left:30%;
-  width:100%;
-}
-.container {
-  margin-top: 40px;
-}
-.control-label{
+label{
   color:white;
-}
-.next{
-  padding:5px 15px 5px 15px;
-  margin-left:47%;
-  text-align: center;
 }
 .xdsoft_datetimepicker {
     box-shadow: 0 5px 15px -5px rgba(0,0,0,0.506);
@@ -133,26 +109,29 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
 //   import moment from 'moment'
  import axios from 'axios'
 import router from '../router'
+import Product from './Product'
 export default {
  data () {
     return {
-      pickup_date:'',
-      dropoff_date: ''
+      pickup_time:'',
+      dropoff_time: ''
     }
   },
  methods: {
     pickup () {
       axios.post('http://localhost:7000/pickup/pickup', {
-        pickup_date:this.pickup_date,
-        dropoff_date: this.dropoff_date
+        pickUp_time:this.pickUp_time,
+        dropOff_time: this.dropOff_time
+       
       }).then(res => {
-        // router.push({ name: 'orders' })
+        router.push({ name: 'Product' })
         this.$emit('Pickuped');
       }).catch(err => {
         window.alert(err.response.data.err)
       })
     }
-  },
+  }
+,
 mounted(){
  $('#picker1').datetimepicker({
    timepicker:true,

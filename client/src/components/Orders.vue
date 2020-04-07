@@ -19,7 +19,7 @@
 import Mininav from "./Mininav"
 import jwtDecode from 'jwt-decode'
 export default {
-name: 'App',
+name: 'orders',
   components:{
     'Mininav':Mininav
   },
