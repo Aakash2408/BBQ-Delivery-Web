@@ -19,8 +19,8 @@ const AddressSchema = new Schema({
         required: false
     },
     tel: {
-        type: Date,
-        default: Date.now
+        type: String,
+       required:true
     }
     })
 

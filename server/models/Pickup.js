@@ -2,13 +2,18 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 const PickupSchema = new Schema({
-    pickup_date: {
-        type: String,
-        required:true
+    pickUp_time: {
+        type:Date,
+        required:true,
+        path:pickUp_time
+       
+        
          },
-    dropoff_date: {
-        type: String,
-        required:true
+    dropOff_time: {
+        type:Date,
+        required:true,
+        path:dropOff_time
+       
     }
     })
 

@@ -11,13 +11,13 @@ pickup.use(cors())
 pickup.post("/pickup", (req, res) => {
     const today = new Date()
     const pickupInfo = {
-        pickup_date: req.body.pickup,
-        dropoff_date: req.body.dropoff
+        pickUp_time: req.body.pickUp_time,
+        dropOff_time: req.body.dropOff_time
     }
     //  .then(userdata => {
            Pickup.create(pickupInfo)
            .then(pickupdata => {
-               res.json({ status: pickupInfo.dropoff + ' is the Dropoff date' })
+               res.json({ status: pickupInfo.dropOff_time + ' is the Dropoff date' })
                  })
                .catch(err => {
                             res.send('error: ' + err)
