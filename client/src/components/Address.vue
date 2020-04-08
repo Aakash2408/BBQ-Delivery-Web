@@ -92,7 +92,7 @@ export default {
         city: this.city,
         tel:this.tel
       }).then(res => {
-        // router.push({ name: 'Login' })
+        router.push({ name: 'Orders' })
         this.$emit('addressed');
       }).catch(err => {
         window.alert(err.response.data.err)
