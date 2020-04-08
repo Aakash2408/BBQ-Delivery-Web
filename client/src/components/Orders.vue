@@ -33,7 +33,7 @@ name: 'orders',
       state: decoded.state,
       city: decoded.city,
       street_1: decoded.street_1,
-      street_2:decoded.street_2,
+
       tel:decoded.tel
       }
   }

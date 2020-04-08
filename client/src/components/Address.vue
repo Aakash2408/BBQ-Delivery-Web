@@ -27,7 +27,7 @@
             <label for="tel">Contact Number </label>
             <input type="tel" v-model="telephone" class="form-control" name="tel" placeholder="Enter your Contact Number">
           </div><br></br>
-          <button class="btn btn-lg btn-primary btn-block"   @click="modalAction()" type="submit" style="color:white">Book Now</button>
+          <button class="btn btn-lg btn-primary btn-block"   @click="modalAction()"type="submit" style="color:white">Book Now</button>
          
         </form>
         <!--MOdal -->
@@ -72,45 +72,36 @@
 import axios from 'axios'
 import router from '../router'
 import Orders from './Orders'
+import EventBus from './EventBus'
 export default {
   data () {
-    return {
-      state:'',
-      city: '',
+   return {
       street_1: '',
       street_2: '',
-      tel: '',
-      currentComponent: 'Address',
-      modal:false
+      state: '',
+      city: '',
+      tel:''
     }
   },
    methods: {
-    address () {
+    register () {
       axios.post('http://localhost:7000/address/address', {
-        state:this.state,
-        city: this.city,
         street_1: this.street_1,
         street_2: this.street_2,
-        tel: this.tel
+        state: this.state,
+        city: this.city,
+        tel:this.tel
       }).then(res => {
-        // router.push({ name: 'Orders' })
-        this.$emit('Addressed');
+        // router.push({ name: 'Login' })
+        this.$emit('addressed');
       }).catch(err => {
         window.alert(err.response.data.err)
       })
-    },
-     modalAction(){
-       if (this.modal == false){
-         this.modal =true
-       }else{
-         this.modal=false
-       }
     }
-  
- 
+  }
 
   }
-}
+
 </script>
 
 <style>

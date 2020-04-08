@@ -113,8 +113,8 @@ import Product from './Product'
 export default {
  data () {
     return {
-      pickup_time:'',
-      dropoff_time: ''
+      pickUp_time:'',
+      dropOff_time: ''
     }
   },
  methods: {
