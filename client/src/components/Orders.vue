@@ -16,7 +16,7 @@
 import Mininav from "./Mininav"
 import jwtDecode from 'jwt-decode'
 export default {
-name: 'orders',
+name: 'Orders',
   components:{
     'Mininav':Mininav
   },
@@ -30,7 +30,6 @@ name: 'orders',
       state: decoded.state,
       city: decoded.city,
       street_1: decoded.street_1,
-
       tel:decoded.tel
       }
   }

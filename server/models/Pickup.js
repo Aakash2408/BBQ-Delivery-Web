@@ -5,14 +5,14 @@ const PickupSchema = new Schema({
     pickUp_time: {
         type:Date,
         required:true,
-        path:pickUp_time
+        // path:pickUp_time
        
         
          },
     dropOff_time: {
-        type:Date,
+        type:Date ,
         required:true,
-        path:dropOff_time
+        // path:dropOff_time
        
     }
     })

@@ -7,10 +7,13 @@
           <div class="form-item box-item">
             <label for="pickUp_time">Pickup Date</label>
             <input type="text" id="picker1"  v-model="pickUp_time" class="form-control" name="pickUp_time" placeholder="choose Pickup Date">
+            <h5 style="color:white">format:YYYY:MM:DDTHH:SS</h5>
+            
           </div><br>
           <div class="form-item box-item">
             <label for="dropOff_time">DropOff Date</label>
             <input type="text" id="picker2" v-model="dropOff_time" class="form-control" name="dropOff_time" placeholder="choose Dropoff date">
+             <h5 style="color:white">format:YYYY:MM:DDTHH:SS</h5>
           </div><br></br>
          
          <button class="btn btn-lg btn-primary btn-block" type="submit">Next</button>

@@ -18,7 +18,7 @@ const AddressSchema = new Schema({
         type: String,
         required: false
     },
-    tel: {
+    telephone: {
         type: String,
        required:true
     }
