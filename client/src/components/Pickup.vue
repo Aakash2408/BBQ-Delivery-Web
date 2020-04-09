@@ -136,16 +136,36 @@
     },
     methods: {
       pickup() {
-        axios.post('http://localhost:7000/pickup/pickup', {
-          pickUp_time: this.pickUp_time,
-          dropOff_time: this.dropOff_time
+        let myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
 
-        }).then(res => {
-          router.push({name: 'Product'});
-          this.$emit('Pickuped');
-        }).catch(err => {
-          window.alert(err.response.data.err)
-        })
+        let raw = JSON.stringify({"pickUp_time": this.pickUp_time, "dropOff_time": this.dropOff_time});
+
+        let requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+
+        fetch("http://localhost:3000/pickup/pickup", requestOptions)
+          .then(response => response.text())
+          .then(result => {
+            router.push({name: 'Product'});
+            this.$emit('Pickuped');
+            // console.log(result)
+          })
+          .catch(error => console.log('error', error));
+        // axios.post('http://localhost:7000/pickup/pickup', {
+        //   pickUp_time: this.pickUp_time,
+        //   dropOff_time: this.dropOff_time
+        //
+        // }).then(res => {
+        //   router.push({name: 'Product'});
+        //   this.$emit('Pickuped');
+        // }).catch(err => {
+        //   window.alert(err.response.data.err)
+        // })
       }
     }
     ,
