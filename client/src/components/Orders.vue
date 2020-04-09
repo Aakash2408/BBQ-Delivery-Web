@@ -1,61 +1,66 @@
 <template>
   <div class="Orders">
-      <Mininav />
-       <button class="btn btn-primary" style="color:white;  background:white; text-align:center;"><router-link to="/booking">Booking page</router-link></button>
+    <Mininav/>
+    <button class="btn btn-primary" style="color:white;  background:white; text-align:center;">
+      <router-link to="/booking">Booking page</router-link>
+    </button>
     <div class="content">
 
-  
-  <h1> {{state}}{{city}}{{street_1}}</h1>
-</div>
 
-   </div>
-  
+      <h1> {{state}}{{city}}{{street_1}}</h1>
+    </div>
+
+  </div>
+
 </template>
 
 <script>
-import Mininav from "./Mininav"
-import jwtDecode from 'jwt-decode'
-export default {
-name: 'Orders',
-  components:{
-    'Mininav':Mininav
-  },
- 
+  import Mininav from "./Mininav"
+  import jwtDecode from 'jwt-decode'
+
+  export default {
+    name: 'Orders',
+    components: {
+      'Mininav': Mininav
+    },
 
 
-     data () {
-    const token = localStorage.usertoken
-    const decoded = jwtDecode(token)
-    return {
-      state: decoded.state,
-      city: decoded.city,
-      street_1: decoded.street_1,
-      tel:decoded.tel
+    data() {
+      const token = localStorage.usertoken;
+      const decoded = jwtDecode(token);
+      return {
+        state: decoded.state,
+        city: decoded.city,
+        street_1: decoded.street_1,
+        tel: decoded.tel
       }
+    }
   }
-}
 
 </script>
 
 <style>
-.Orders{
+  .Orders {
     height: 100vh;
-    background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url('https://images.pexels.com/photos/6014/food-holiday-vacation-summer.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.pexels.com/photos/6014/food-holiday-vacation-summer.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500');
     background-size: cover;
     background-position: center;
-}
-h2{
+  }
+
+  h2 {
     color: white;
     text-align: center;
-    margin-top:10%;
-}
-h1{
+    margin-top: 10%;
+  }
+
+  h1 {
     color: rgba(72, 177, 12, 0.76);
     text-align: center;
 
-}
-.information{
-  height:10vh;
-  background-color:aliceblue;
-}
+  }
+
+  .information {
+    height: 10vh;
+    background-color: aliceblue;
+  }
 </style>
