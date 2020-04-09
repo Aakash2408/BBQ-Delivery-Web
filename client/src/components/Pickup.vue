@@ -139,6 +139,7 @@
         let myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
+        console.log(this.pickUp_time)
         let raw = JSON.stringify({"pickUp_time": this.pickUp_time, "dropOff_time": this.dropOff_time});
 
         let requestOptions = {
