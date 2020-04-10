@@ -37,6 +37,7 @@
     <center>
       <div class="jumbotron" style="margin-top: 100px; padding: 10px;max-width: 600px;" v-if="item_focus">
         <div style="color: #000;margin: 40px"><b>Order ID: </b>{{item_focus._id}}</div>
+        <div style="color: #000;margin: 40px"><b>Pick Up time: </b>{{formatDate(pickup.pickUp_time)}}</div>
         <div style="color: #000;margin: 40px"><b>Drop off time: </b>{{formatDate(pickup.dropOff_time)}}</div>
         <div style="color: #000;margin: 40px"><b>Placed : </b>{{time_ago(item_focus.placed_at)}}</div>
         <div style="color: #000;margin: 40px"><b>Drop Off Address : </b>
