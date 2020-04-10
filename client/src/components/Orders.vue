@@ -37,7 +37,7 @@
           <thead>
           <tr>
             <th scope="col">Drop Off Time</th>
-            <th scope="col">Order ID</th>
+            <!-- <th scope="col">Order ID</th> -->
             <th scope="col">Placed</th>
           </tr>
           </thead>
@@ -45,7 +45,7 @@
           <tr @click='' @click="goto_order(order)" style="cursor: pointer;"
               v-for="order in  orders">
             <th scope="row">{{formatDate(order.dropOff_time)}}</th>
-            <th scope="row">{{order._id}}</th>
+            <!-- <th scope="row">{{order._id}}</th> -->
             <td>{{time_ago(order.placed_at)}}</td>
 
           </tr>
