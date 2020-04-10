@@ -56,7 +56,11 @@
           .then(result => {
             localStorage.setItem('usertoken', result.token);
             localStorage.setItem('userid', result._id);
-            router.push({name: 'Profile'})
+            if (result.token != null) {
+              router.push({name: 'Profile'});
+            } else {
+              window.alert("Email or password wrong!");
+            }
           })
           .catch(error => {
             console.log('error', error);

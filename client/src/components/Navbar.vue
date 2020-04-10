@@ -10,16 +10,16 @@
         <li class="nav-item">
           <router-link class="nav-link" to="/">Home</router-link>
         </li>
-        <li class="nav-item" v-if="auth==''">
+        <li class="nav-item" v-if="auth===''">
           <router-link class="nav-link" to="/login">Login</router-link>
         </li>
-        <li class="nav-item" v-if="auth==''">
+        <li class="nav-item" v-if="auth===''">
           <router-link class="nav-link" to="/register">Register</router-link>
         </li>
-        <li class="nav-item" v-if="auth=='loggedin'">
+        <li class="nav-item" v-if="auth==='loggedin'">
           <router-link class="nav-link" to="/profile">Profile</router-link>
         </li>
-        <li class="nav-item" v-if="auth=='loggedin'">
+        <li class="nav-item" v-if="auth==='loggedin'">
           <a class="nav-link" href="" v-on:click="logout">Logout</a>
         </li>
       </ul>

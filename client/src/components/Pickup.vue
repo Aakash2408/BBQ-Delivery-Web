@@ -148,7 +148,7 @@
           .then(response => response.json())
           .then(result => {
             localStorage.setItem('pickup_id', result.pickup_id);
-            router.push({name: 'Product'});
+            router.push({path: '/booking/address'});
             this.$emit('Pickuped');
             // console.log(result)
           })

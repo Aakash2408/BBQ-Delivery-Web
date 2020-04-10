@@ -3,35 +3,36 @@
     <div class="row">
       <div class="col-md-6 mt-5 mx-auto">
         <h3>Enter your Delivery Address</h3><br></br>
-        <button @click="address" class="btn btn-lg btn-primary btn-block" style="color:white">Book Now</button>
 
 
         <div class="form-item box-item">
           <label for="street_1">Street 1</label>
           <input class="form-control" name="street_1" placeholder="Street 1" type="text" v-model="street_1">
         </div>
-        <br></br>
+        <br>
         <div class="form-item box-item">
           <label for="street_2">Street 2</label>
           <input class="form-control" name="email" placeholder="Street 2" type="text" v-model="street_2">
         </div>
-        <br></br>
+        <br>
         <div class="form-item box-item">
           <label for="city">City</label>
           <input class="form-control" name="city" placeholder="Enter Your City" type="text" v-model="city">
         </div>
-        <br></br>
+        <br>
         <div class="form-item box-item">
           <label for="state">State</label>
           <input class="form-control" name="state" placeholder="Enter Your State" type="text" v-model="state">
         </div>
-        <br></br>
+        <br>
         <div class="form-item box-item">
           <label for="telephone">Contact Number </label>
           <input class="form-control" name="telephone" placeholder="Enter your Contact Number" type="text"
                  v-model="telephone">
         </div>
-        <br></br>
+        <br>
+        <button @click="address" class="btn btn-lg btn-primary btn-block" style="color:white">Next</button>
+
 
       </div>
     </div>
@@ -77,6 +78,8 @@
           .then(result => {
             localStorage.setItem('address_id', result.address_id);
             console.log(result)
+            router.push({path: '/product'});
+
           })
           .catch(error => console.log('error', error));
         // axios.post('http://localhost:7000/address/address', {

@@ -8,6 +8,7 @@ import Booking from '@/components/Booking'
 import Pickup from '@/components/Pickup'
 import Bbq from '@/components/Bbq'
 import Address from '@/components/Address'
+import Order from '@/components/Order'
 
 
 import Orders from '@/components/Orders'
@@ -15,38 +16,42 @@ import Product from '@/components/Product'
 import Confirm from '@/components/Confirm'
 
 
-
-
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
       path: '/',
       name: 'Home',
-      component: Home    
+      component: Home
     },
     {
       path: '/login',
       name: 'Login',
-      component: Login    
+      component: Login
     },
     {
       path: '/register',
       name: 'Register',
-      component: Register    
+      component: Register
     },
     {
       path: '/profile',
       name: 'Profile',
-      component: Profile    
+      component: Profile
     },
     {
       path: '/orders',
       name: 'Orders',
-      component: Orders    
+      component: Orders
+    }
+    ,
+    {
+      path: '/Order',
+      name: 'Order',
+      component: Order
     },
-  
+
     {
       path: '/product',
       name: 'Product',
@@ -55,31 +60,32 @@ export default new Router({
     {
       path: '/booking',
       name: 'Booking',
-      component: Booking ,
-      children:[
-                  {
-                         path: 'pickup',
-                         name: 'Pickup',
-                         component: Pickup
-                  },
-                  {
-                         path:'bbq',
-                         name:'Bbq',
-                         component:Bbq
-                  },
-                  {
-                        path:'address',
-                        name:'Address',
-                        component:Address
-                  },
-                 
-                ]
-    } ,
+      component: Booking,
+      children: [
+        {
+          path: 'pickup',
+          name: 'Pickup',
+          component: Pickup
+        },
+        {
+          path: 'address',
+          name: 'Address',
+          component: Address
+        },
+        {
+          path: 'bbq',
+          name: 'Bbq',
+          component: Bbq
+        },
+
+
+      ]
+    },
     {
-      path:'/confirm',
-      name:'Confirm',
-      component:Confirm
+      path: '/confirm',
+      name: 'Confirm',
+      component: Confirm
     }
-    
+
   ]
 })

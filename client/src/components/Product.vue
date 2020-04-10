@@ -114,7 +114,7 @@
                   <!--                  <router-link to="/booking/address">-->
                   <router-link to="">
 
-                    <button @click="checkout" class="btn btn-success">Checkout</button>
+                    <button @click="checkout" class="btn btn-success">Place Order</button>
                   </router-link>
 
                   <!--                      </router-link>-->
@@ -137,6 +137,7 @@
 
 <script>
   import Mininav from './Mininav'
+  import router from "../router";
 
   export default {
     name: "pickup",
@@ -371,6 +372,7 @@
           .then(result => {
             console.log(result.order_id);
             console.log(result)
+            router.push({path: '/orders'});
           })
           .catch(error => console.log('error', error));
         // if (confirm('Are you sure that you want to purchase these products?')) {
