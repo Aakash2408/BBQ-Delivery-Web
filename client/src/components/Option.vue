@@ -3,7 +3,7 @@
     <div class="split left">
       <div class="centered">
 
-        <router-link to="/Booking"><h2>Place an Order</h2></router-link>
+        <router-link to="/booking/pickup"><h2>Place an Order</h2></router-link>
 
       </div>
       <div class="vl"></div>
