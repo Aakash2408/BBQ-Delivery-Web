@@ -35,8 +35,9 @@
     </a>
     <h2 style="color: forestgreen"> Booking Details</h2>
     <center>
-      <div class="jumbotron" v-if="item_focus" style="margin-top: 100px; padding: 10px;max-width: 600px;">
+      <div class="jumbotron" style="margin-top: 100px; padding: 10px;max-width: 600px;" v-if="item_focus">
         <div style="color: #000;margin: 40px"><b>Order ID: </b>{{item_focus._id}}</div>
+        <div style="color: #000;margin: 40px"><b>Drop off time: </b>{{formatDate(pickup.dropOff_time)}}</div>
         <div style="color: #000;margin: 40px"><b>Placed : </b>{{time_ago(item_focus.placed_at)}}</div>
         <div style="color: #000;margin: 40px"><b>Drop Off Address : </b>
           <span v-for="item in ['street_1','street_2','city','state','telephone']" v-if="pickup">
@@ -84,7 +85,6 @@
     </center>
 
 
-
   </div>
 
 </template>
@@ -107,6 +107,21 @@
       }
     },
     methods: {
+      formatDate: (date) => {
+        date = new Date(date);
+        let year = date.getFullYear(),
+          month = date.getMonth() + 1, // months are zero indexed
+          day = date.getDate(),
+          hour = date.getHours(),
+          minute = date.getMinutes(),
+          second = date.getSeconds(),
+          hourFormatted = hour % 12 || 12, // hour returned in 24 hour format
+          minuteFormatted = minute < 10 ? "0" + minute : minute,
+          morning = hour < 12 ? "am" : "pm";
+
+        return month + "/" + day + "/" + year + " " + hourFormatted + ":" +
+          minuteFormatted + morning;
+      },
       time_ago: (time) => {
 
         switch (typeof time) {
@@ -165,11 +180,11 @@
     mounted() {
       var order_history_app = this;
       order_history_app.item_focus = this.$route.params.order;
-      order_history_app.total = order_history_app.item_focus.cart.reduce((total,item)=>{
+      order_history_app.total = order_history_app.item_focus.cart.reduce((total, item) => {
         console.log(item.product.quantity);
         return total + parseFloat(item.product.price);
-      },0);
-      console.log(order_history_app.total)
+      }, 0);
+      console.log(order_history_app.total);
       console.log(JSON.stringify(this.$route.params.order));
       let myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
