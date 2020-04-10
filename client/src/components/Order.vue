@@ -48,7 +48,7 @@
         </div>
 
         <div style="color: #000;margin: 40px"><b>Booking Totals : </b>
-          <span>Rs {{item_focus.cart.reduce((total,item)=>{
+          <span>$ {{item_focus.cart.reduce((total,item)=>{
         // console.log(item.product.price);
         return total + (parseFloat(item.product.price) * parseFloat(item.quantity));
       },0)}}/- </span>

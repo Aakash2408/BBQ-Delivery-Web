@@ -328,7 +328,7 @@
         return total;
       },
       taxAmount: function () {
-        return this.cartTotal * 10 / 100;
+        return this.cartTotal * 8.25 / 100;
       }
     },
     filters: {
