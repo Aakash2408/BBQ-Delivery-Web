@@ -358,6 +358,7 @@
             address_id: localStorage.getItem('address_id'),
             pickup_id: localStorage.getItem('pickup_id'),
             placed_at : Date.now(),
+            dropOff_time : localStorage.getItem('dropOff_time'),
             cart: this.cart.items
           });
 

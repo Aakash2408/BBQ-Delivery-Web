@@ -124,7 +124,7 @@ router.post("/get_orders", (req, res) => {
 
     Order.find({
         user_id: req.body.user_id
-    }).sort({placed_at: 'desc'}).then(data => {
+    }).sort({dropOff_time: 'desc'}).then(data => {
         // console.log(data);
         if (data) {
             res.json(data);

@@ -11,7 +11,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
 
-const mongoURI = 'mongodb://localhost:27017/mevnloginreg';
+const mongoURI = 'mongodb+srv://joeydash:joeydash@cluster0-nnunu.mongodb.net/bbq?retryWrites=true&w=majority';
 
 mongoose.connect(mongoURI, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => console.log("MongoDB Connected"))

@@ -36,6 +36,7 @@
         <table class="table table-hover table-dark" style="max-width: 600px;">
           <thead>
           <tr>
+            <th scope="col">Drop Off Time</th>
             <th scope="col">Order ID</th>
             <th scope="col">Placed</th>
           </tr>
@@ -43,6 +44,7 @@
           <tbody>
           <tr @click='' @click="goto_order(order)" style="cursor: pointer;"
               v-for="order in  orders">
+            <th scope="row">{{formatDate(order.dropOff_time)}}</th>
             <th scope="row">{{order._id}}</th>
             <td>{{time_ago(order.placed_at)}}</td>
 
@@ -77,6 +79,21 @@
       }
     },
     methods: {
+      formatDate: (date) => {
+        date = new Date(date);
+        let year = date.getFullYear(),
+          month = date.getMonth() + 1, // months are zero indexed
+          day = date.getDate(),
+          hour = date.getHours(),
+          minute = date.getMinutes(),
+          second = date.getSeconds(),
+          hourFormatted = hour % 12 || 12, // hour returned in 24 hour format
+          minuteFormatted = minute < 10 ? "0" + minute : minute,
+          morning = hour < 12 ? "am" : "pm";
+
+        return month + "/" + day + "/" + year + " " + hourFormatted + ":" +
+          minuteFormatted + morning;
+      },
       goto_order: (order) => {
         // localStorage.setItem('address_id', address_id);
         // localStorage.setItem('pickup_id', pickup_id);

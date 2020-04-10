@@ -143,7 +143,7 @@
           body: raw,
           redirect: 'follow'
         };
-
+        localStorage.setItem('dropOff_time', this.dropOff_time);
         fetch("http://localhost:3000/pickup", requestOptions)
           .then(response => response.json())
           .then(result => {
