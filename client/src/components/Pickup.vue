@@ -2,27 +2,23 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 mt-5 mx-auto">
-        <form v-on:submit.prevent="pickup">
 
-          <div class="form-item box-item">
-            <label for="pickUp_time">Pickup Date</label>
-            <input class="form-control" id="picker1" name="pickUp_time" placeholder="choose Pickup Date" type="text"
-                   v-model="pickUp_time">
-            <h5 style="color:white">format:YYYY:MM:DDThh:mm</h5>
+        <div class="form-item box-item">
+          <label for="pickUp_time">Pickup Date</label>
+          <input class="form-control" id="picker1" name="pickUp_time" placeholder="choose Pickup Date" type="text">
+          <!--            <h5 style="color:white">format:YYYY:MM:DDThh:mm</h5>-->
 
-          </div>
-          <br>
-          <div class="form-item box-item">
-            <label for="dropOff_time">DropOff Date</label>
-            <input class="form-control" id="picker2" name="dropOff_time" placeholder="choose Dropoff date" type="text"
-                   v-model="dropOff_time">
-            <h5 style="color:white">format:YYYY:MM:DDThh:mm</h5>
-          </div>
-          <br></br>
+        </div>
+        <br>
+        <div class="form-item box-item">
+          <label for="dropOff_time">DropOff Date</label>
+          <input class="form-control" id="picker2" name="dropOff_time" placeholder="choose Dropoff date" type="text">
+          <!--            <h5 style="color:white">format:YYYY:MM:DDThh:mm</h5>-->
+        </div>
+        <br></br>
 
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Next</button>
+        <button @click="pickup" class="btn btn-lg btn-primary btn-block">Next</button>
 
-        </form>
       </div>
     </div>
   </div>
@@ -123,7 +119,6 @@
   //   import 'bootstrap/dist/css/bootstrap.css';
   //   import 'pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css';
   //   import moment from 'moment'
-  import axios from 'axios'
   import router from '../router'
   import Product from './Product'
 
@@ -138,10 +133,10 @@
       pickup() {
         let myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-
-        console.log(this.pickUp_time)
-        let raw = JSON.stringify({"pickUp_time": this.pickUp_time, "dropOff_time": this.dropOff_time});
-
+        let raw = JSON.stringify({
+          pickUp_time: this.pickUp_time,
+          dropOff_time: this.dropOff_time
+        });
         let requestOptions = {
           method: 'POST',
           headers: myHeaders,
@@ -149,28 +144,19 @@
           redirect: 'follow'
         };
 
-        fetch("http://localhost:3000/pickup/pickup", requestOptions)
-          .then(response => response.text())
+        fetch("http://localhost:3000/pickup", requestOptions)
+          .then(response => response.json())
           .then(result => {
+            localStorage.setItem('pickup_id', result.pickup_id);
             router.push({name: 'Product'});
             this.$emit('Pickuped');
             // console.log(result)
           })
           .catch(error => console.log('error', error));
-        // axios.post('http://localhost:7000/pickup/pickup', {
-        //   pickUp_time: this.pickUp_time,
-        //   dropOff_time: this.dropOff_time
-        //
-        // }).then(res => {
-        //   router.push({name: 'Product'});
-        //   this.$emit('Pickuped');
-        // }).catch(err => {
-        //   window.alert(err.response.data.err)
-        // })
       }
-    }
-    ,
+    },
     mounted() {
+      var pickup = this;
       $('#picker1').datetimepicker({
         timepicker: true,
         datepicker: true,
@@ -179,6 +165,10 @@
           this.setOptions({
             maxDate: $('#picker2').val() ? $('#picker2').val() : false
           })
+        },
+        onChangeDateTime: function (ct) {
+          // console.log($("#picker1").val());
+          pickup.pickUp_time = $("#picker1").val().toString();
         }
       });
 
@@ -190,8 +180,12 @@
           this.setOptions({
             minDate: $('#picker1').val() ? $('#picker1').val() : false
           })
+        },
+        onChangeDateTime: function (ct) {
+          // console.log($("#picker2").val());
+          pickup.dropOff_time = $("#picker2").val().toString();
         }
-      })
+      });
     }
 
   };

@@ -6,8 +6,8 @@
     </button>
     <div class="content">
 
-
-      <h1> {{state}}{{city}}{{street_1}}</h1>
+      <span style="color: #eeeeee">{{orders}}</span>
+      <!--      <h5 v-for="order in  orders"> {{order._id}}{{order.cart}}{{order.address_id}}</h5>-->
     </div>
 
   </div>
@@ -29,11 +29,34 @@
       const token = localStorage.usertoken;
       const decoded = jwtDecode(token);
       return {
+
+        orders: [],
         state: decoded.state,
         city: decoded.city,
         street_1: decoded.street_1,
         tel: decoded.tel
       }
+    },
+    mounted() {
+      let orders_app = this;
+      let myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      let raw = JSON.stringify({
+        user_id: localStorage.getItem('userid')
+      });
+
+      let requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+      };
+
+      fetch("http://localhost:3000/get_orders", requestOptions)
+        .then(response => response.json())
+        .then(result => orders_app.orders = result)
+        .catch(error => console.log('error', error));
     }
   }
 

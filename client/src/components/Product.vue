@@ -111,9 +111,13 @@
               <tr>
                 <td colspan="2"></td>
                 <td>
-                  <router-link to="/booking/address">
+                  <!--                  <router-link to="/booking/address">-->
+                  <router-link to="">
+
                     <button @click="checkout" class="btn btn-success">Checkout</button>
                   </router-link>
+
+                  <!--                      </router-link>-->
                 </td>
               </tr>
               </tbody>
@@ -345,13 +349,37 @@
         }
       },
       checkout: function () {
-        if (confirm('Are you sure that you want to purchase these products?')) {
-          this.cart.items.forEach(function (item) {
-            item.product.inStock += item.quantity;
+        let myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        let raw = JSON.stringify(
+          {
+            user_id: localStorage.getItem('userid'),
+            address_id: localStorage.getItem('pickup_id'),
+            pickup_id: localStorage.getItem('userid'),
+            cart: this.cart.items
           });
 
-          this.cart.items = [];
-        }
+        let requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+
+        fetch("http://localhost:3000/place_order", requestOptions)
+          .then(response => response.json())
+          .then(result => {
+            console.log(result.order_id);
+            console.log(result)
+          })
+          .catch(error => console.log('error', error));
+        // if (confirm('Are you sure that you want to purchase these products?')) {
+        //   this.cart.items.forEach(function (item) {
+        //     item.product.inStock += item.quantity;
+        //   });
+        //
+        //   this.cart.items = [];
+        // }
       },
       addProductToCart: function (product) {
         var cartItem = this.getCartItem(product);

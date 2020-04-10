@@ -9,8 +9,6 @@ const mongoose = require("mongoose");
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const addressRouter = require('./routes/address');
-const pickupRouter = require('./routes/pickup');
 
 
 const mongoURI = 'mongodb+srv://joeydash:joeydash@cluster0-nnunu.mongodb.net/test?retryWrites=true&w=majority';
@@ -35,9 +33,6 @@ app.use(cors());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/address', addressRouter);
-app.use('/pickup', pickupRouter);
-
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

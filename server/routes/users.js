@@ -62,7 +62,7 @@ router.post('/login', (req, res) => {
                 let token = jwt.sign(payload, secret_key, {
                     expiresIn: 1440
                 });
-                res.send(token);
+                res.send({token : token, _id : payload._id});
             } else {
                 res.status(400).json({error: 'Password does not match'});
             }
@@ -79,7 +79,7 @@ router.get('/profile', (req, res) => {
     User.findOne({
         _id: decoded._id
     }).then(user => {
-        console.log(user);
+        // console.log(user);
         if (user) {
             res.json(user);
         } else {

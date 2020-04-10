@@ -39,7 +39,10 @@
         let myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
-        let raw = JSON.stringify({"email": this.email, "password": this.password});
+        let raw = JSON.stringify({
+          email: this.email,
+          password: this.password
+        });
 
         let requestOptions = {
           method: 'POST',
@@ -49,9 +52,10 @@
         };
 
         fetch("http://localhost:3000/users/login", requestOptions)
-          .then(response => response.text())
+          .then(response => response.json())
           .then(result => {
-            localStorage.setItem('usertoken', result);
+            localStorage.setItem('usertoken', result.token);
+            localStorage.setItem('userid', result._id);
             router.push({name: 'Profile'})
           })
           .catch(error => {
