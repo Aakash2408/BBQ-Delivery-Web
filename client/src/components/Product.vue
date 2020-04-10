@@ -357,6 +357,7 @@
             user_id: localStorage.getItem('userid'),
             address_id: localStorage.getItem('address_id'),
             pickup_id: localStorage.getItem('pickup_id'),
+            placed_at : Date.now(),
             cart: this.cart.items
           });
 

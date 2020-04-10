@@ -99,8 +99,9 @@ router.post("/get_pickup", (req, res) => {
 });
 
 router.post("/place_order", (req, res) => {
-
+    const today = new Date();
     //  .then(userdata => {
+    req.body.created =  today;
     Order.create(req.body)
         .then(orderdata => {
             res.json({
@@ -123,7 +124,7 @@ router.post("/get_orders", (req, res) => {
 
     Order.find({
         user_id: req.body.user_id
-    }).then(data => {
+    }).sort({placed_at: 'desc'}).then(data => {
         // console.log(data);
         if (data) {
             res.json(data);

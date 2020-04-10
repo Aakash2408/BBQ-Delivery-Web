@@ -2,6 +2,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const OrderSchema = new Schema({
+    placed_at : {
+        type: Date,
+        required: true,
+        // path:pickUp_time
+    },
     user_id: {
         type: String,
         required: true
