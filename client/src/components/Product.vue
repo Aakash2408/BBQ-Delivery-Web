@@ -355,8 +355,8 @@
         let raw = JSON.stringify(
           {
             user_id: localStorage.getItem('userid'),
-            address_id: localStorage.getItem('pickup_id'),
-            pickup_id: localStorage.getItem('userid'),
+            address_id: localStorage.getItem('address_id'),
+            pickup_id: localStorage.getItem('pickup_id'),
             cart: this.cart.items
           });
 

@@ -79,6 +79,7 @@
       goto_order: (order) => {
         // localStorage.setItem('address_id', address_id);
         // localStorage.setItem('pickup_id', pickup_id);
+        // console.log(JSON.stringify(order))
         router.push({
           name: 'Order', params: {
             order: order
